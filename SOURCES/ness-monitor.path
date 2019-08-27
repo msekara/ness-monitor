@@ -1,0 +1,9 @@
+[Unit]
+Description= Triggers the service that sends alert on Ness alarm events.
+Documentation= man:systemd.path
+
+[Path]
+PathModified=/var/local/lib/ness-monitor/events
+
+[Install]
+WantedBy=multi-user.target

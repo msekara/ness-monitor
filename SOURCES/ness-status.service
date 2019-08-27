@@ -1,0 +1,11 @@
+[Unit]
+Description=A service to get Ness alarm status.
+
+[Service]
+Type=simple
+ExecStart=/bin/bash /usr/local/bin/ness-status.sh
+Restart=always
+WatchdogSec=3600
+
+[Install]
+WantedBy=multi-user.target

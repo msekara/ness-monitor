@@ -1,0 +1,11 @@
+/var/local/lib/ness-monitor/events /var/local/lib/ness-monitor/index {
+    daily
+    missingok
+    notifempty
+    sharedscripts
+    postrotate
+        /bin/systemctl restart ness-status.service
+	echo "1" > /var/local/lib/ness-monitor/index
+    endscript
+}
+
