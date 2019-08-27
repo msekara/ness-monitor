@@ -1,7 +1,7 @@
 # ness-monitor
 Ness Alarm monitoring via IP232 for D8X/D16X
 
-A very simple alarm notification that sends emails on alarm events.
+A very simple alarm notification app that sends emails on alarm events.
 
 ness-status.sh script connects to Ness IP232 and writes raw events to the local file ("events" file).
 ness-monitor.path monitors the file "events" and on a file change, calls ness-monitor.service, which in turn executes ness-monitor.sh script.
