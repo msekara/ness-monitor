@@ -23,7 +23,7 @@ GMAIL_SEND_PWD="<FROMEMAIL_PASSWORD"
 
 send_email()
 {
-	sendemail -l /var/log/ness_email.log -f "alarm@hq.emefes.com" -u "ALARM - Notification" -t "$GMAIL_RECV_ACC" -s "smtp.gmail.com:587" -o tls=yes -xu "$GMAIL_SEND_ACC" -xp "$GMAIL_SEND_PWD" -m "$1"	
+	sendemail -l /var/log/ness_email.log -f "alarm@gmail.com" -u "ALARM - Notification" -t "$GMAIL_RECV_ACC" -s "smtp.gmail.com:587" -o tls=yes -xu "$GMAIL_SEND_ACC" -xp "$GMAIL_SEND_PWD" -m "$1"	
 #		-o message-file="/var/local/lib/emailbody.txt"
 }
 
