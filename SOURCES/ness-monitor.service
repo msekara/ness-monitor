@@ -1,8 +1,23 @@
 [Unit]
-Description= Starts the action on Ness alarm event
-Documentation= man:systemd.service
+Description=Ness D8x/D16x alarm monitor (persistent IP232 connection + push notifications)
+After=network-online.target
+Wants=network-online.target
 
 [Service]
-Type=oneshot
-ExecStart=/usr/local/bin/ness-monitor.sh
+Type=simple
+ExecStart=/usr/bin/python3 /usr/local/bin/ness_monitor.py /etc/ness-monitor/ness-monitor.conf
+Restart=always
+RestartSec=5
+# Watchdog: the process itself uses TCP keepalive + reconnect, so this is a
+# belt-and-braces restart if the whole process wedges.
+User=ness
+Group=ness
+# Hardening (relax if it interferes with your environment)
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=true
+PrivateTmp=true
+ReadWritePaths=/var/local/lib/ness-monitor
 
+[Install]
+WantedBy=multi-user.target
