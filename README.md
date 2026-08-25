@@ -3,7 +3,7 @@
 Persistent-connection monitor for the Ness D8x/D16x IP232 serial interface.
 Decodes the ASCII protocol, logs every event to SQLite, and sends push
 notifications (ntfy / Pushover / Telegram / email) for the events you care
-about — with mobile push, not just email.
+about.
 
 This replaces the older five-script setup (`ness-status.sh`,
 `ness-monitor.path`, `ness-monitor.service`, `ness-monitor.sh`, plus the
